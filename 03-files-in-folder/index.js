@@ -10,7 +10,7 @@ async function readFolder(folder) {
     stats = await fs.promises.stat(filePath);
     if(stats.isFile()) {
       fileInfo = file.split('.').join(' - ');
-      size = Number(stats.size / 2000).toFixed(3);
+      size = Number(stats.size / 1024).toFixed(3);
       console.log(`${fileInfo} - ${size}kb`);
     }
   });
